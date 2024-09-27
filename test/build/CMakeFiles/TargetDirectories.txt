@@ -1,0 +1,4 @@
+/home/michael/MIPT/proga/progs/cash/test/build/CMakeFiles/testlib.dir
+/home/michael/MIPT/proga/progs/cash/test/build/CMakeFiles/test.dir
+/home/michael/MIPT/proga/progs/cash/test/build/CMakeFiles/edit_cache.dir
+/home/michael/MIPT/proga/progs/cash/test/build/CMakeFiles/rebuild_cache.dir

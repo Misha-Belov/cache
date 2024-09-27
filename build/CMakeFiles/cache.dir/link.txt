@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/cache.dir/source/cache.cpp.o -o ../bin/cache  libcachelib.a 

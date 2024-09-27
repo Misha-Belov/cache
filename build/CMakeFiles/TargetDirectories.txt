@@ -1,0 +1,4 @@
+/home/michael/MIPT/proga/progs/cash/build/CMakeFiles/cachelib.dir
+/home/michael/MIPT/proga/progs/cash/build/CMakeFiles/cache.dir
+/home/michael/MIPT/proga/progs/cash/build/CMakeFiles/edit_cache.dir
+/home/michael/MIPT/proga/progs/cash/build/CMakeFiles/rebuild_cache.dir
