@@ -20,10 +20,7 @@ int main() {
     std::cin >> q;
     assert(std::cin.good());
 
-    if (c.lookup_update(q, slow_get_page_int))
-        hits += 1;
-
-    // hits += c.lookup_update(q, slow_get_page_int);
+    hits += c.lookup_update(q, slow_get_page_int);
   }
 
   std::cout << hits << std::endl;

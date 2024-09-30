@@ -7,6 +7,13 @@
 
 int slow_get_page_int (int key) { return key; }
 
+template <typename T, typename KeyT = int, typename frec = int> 
+std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<KeyT, T, frec>> &cache) {
+  for (auto const &i: cache) {
+    os << std::get<1>(i);
+  }
+  return os;
+}
 
 template <typename T, typename KeyT = int, typename frec = int> class cache_t {
   public:
@@ -25,6 +32,8 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
     cache_t(size_t sz) : sz_(sz) {}
 
     template <typename F> bool lookup_update(KeyT key, F slow_get_page) {
+
+      std::cout << "small: " << small_cache << "main: " << main_cache << "small: " << small_cache << "\n";
       auto ghost_hit = ghost_hash.find(key);
       auto main_hit = main_hash.find(key);
       auto small_hit = small_hash.find(key);
@@ -72,8 +81,10 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
         return true; 
       }
   
-      // main_hash.emplace(ghost_hash.erase(ghost_hit));                      //!!!!
-      // main_cache.emplace_front(ghost_cache.erase((ghost_hit->second)));    //!!!!
+      main_cache.emplace_front(*(ghost_hit->second));   
+      main_hash.emplace(std::get<0>(*(main_cache.begin())), main_cache.begin());                    
+      ghost_cache.erase((ghost_hit->second));
+      ghost_hash.erase(ghost_hit);
       return true; 
     }
 };
