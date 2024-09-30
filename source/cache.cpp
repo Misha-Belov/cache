@@ -21,6 +21,7 @@ int main() {
     assert(std::cin.good());
 
     hits += c.lookup_update(q, slow_get_page_int);
+    // c.dump(q);
   }
 
   std::cout << hits << std::endl;

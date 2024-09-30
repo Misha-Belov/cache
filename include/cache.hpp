@@ -70,8 +70,6 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
         
         small_cache.emplace_front(key, slow_get_page(key), 0);     
         small_hash.emplace(key, small_cache.begin());
-        
-        dump(key);
         return false;
       }
       else {
@@ -87,7 +85,6 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
           ghost_cache.erase((ghost_hit->second));
           ghost_hash.erase(ghost_hit);
         }
-        dump(key);
         return true; 
       }
     }
