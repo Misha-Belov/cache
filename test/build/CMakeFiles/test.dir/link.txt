@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/test.dir/source/main.cpp.o -o ../bin/test  libtestlib.a 

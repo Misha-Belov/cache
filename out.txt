@@ -1,0 +1,11 @@
+key: 1 small: 1  main:  ghost: 
+key: 2 small: 2 1  main:  ghost: 
+key: 3 small: 3 2  main:  ghost: 1 
+key: 4 small: 4 3  main:  ghost: 2 1 
+key: 5 small: 5 4  main:  ghost: 3 2 
+key: 6 small: 6 5  main:  ghost: 4 3 
+key: 7 small: 7 6  main:  ghost: 5 4 
+key: 8 small: 8 7  main:  ghost: 6 5 
+key: 9 small: 9 8  main:  ghost: 7 6 
+key: 10 small: 10 9  main:  ghost: 8 7 
+0
