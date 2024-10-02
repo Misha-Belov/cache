@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/cache.dir/source/cache.cpp.o -o /home/michael/MIPT/proga/progs/cash/bin/cache  libcachelib.a 

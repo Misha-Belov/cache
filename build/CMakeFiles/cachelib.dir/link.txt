@@ -1,2 +1,0 @@
-/usr/bin/ar qc libcachelib.a CMakeFiles/cachelib.dir/source/cache.cpp.o
-/usr/bin/ranlib libcachelib.a
