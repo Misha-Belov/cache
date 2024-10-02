@@ -17,4 +17,4 @@ target_link_libraries(cache cachelib)
 
 #cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
 #cmake —build build
-#./build/LFU
+#./bin/cache

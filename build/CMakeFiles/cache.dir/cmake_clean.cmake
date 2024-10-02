@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../bin/cache"
-  "../bin/cache.pdb"
+  "/home/michael/MIPT/proga/progs/cash/bin/cache"
+  "/home/michael/MIPT/proga/progs/cash/bin/cache.pdb"
   "CMakeFiles/cache.dir/source/cache.cpp.o"
   "CMakeFiles/cache.dir/source/cache.cpp.o.d"
 )

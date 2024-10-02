@@ -1,4 +1,5 @@
-compile.txt
-out.txt
-build
-.vscode
+compile.txt 
+out.txt 
+build    
+.vscode  
+bin

@@ -3,8 +3,6 @@
 
 #include "cache.hpp"
 
-
-
 int main() {
   int hits = 0;
   int count_of_elements;
@@ -21,7 +19,10 @@ int main() {
     assert(std::cin.good());
 
     hits += c.lookup_update(q, slow_get_page_int);
-    // c.dump(q);
+
+    #ifdef DEBUG
+      c.dump(q);  
+    #endif
   }
 
   std::cout << hits << std::endl;

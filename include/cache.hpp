@@ -16,7 +16,7 @@ std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<KeyT, T, 
 }
 
 template <typename T, typename KeyT = int, typename frec = int> class cache_t {
-  public:
+  private:
     size_t sz_;
 
     std::list<std::tuple<KeyT, T, frec>> small_cache;
@@ -29,6 +29,7 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
     std::unordered_map<KeyT, ListIt> main_hash;
     std::unordered_map<KeyT, ListIt> ghost_hash;
 
+  public:
     cache_t(size_t sz) : sz_(sz) {}
 
     void dump(KeyT key) { 
