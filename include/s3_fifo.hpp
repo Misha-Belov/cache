@@ -5,17 +5,17 @@
 #include <unordered_map>
 #include <vector>
 
-int slow_get_page_int (int key) { return key; }
 
-template <typename T, typename KeyT = int, typename frec = int> 
-std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<KeyT, T, frec>> &cache) {
+
+template <typename T1, typename T2, typename T3> 
+std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<T1, T2, T3>> &cache) {
   for (auto const &i: cache) {
     os << std::get<1>(i) << " ";
   }
   return os;
 }
 
-template <typename T, typename KeyT = int, typename frec = int> class cache_t {
+template <typename T, typename KeyT = int, typename frec = int> class cache_fifo {
   private:
     size_t sz_;
 
@@ -30,15 +30,13 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
     std::unordered_map<KeyT, ListIt> ghost_hash;
 
   public:
-    cache_t(size_t sz) : sz_(sz) {}
+    cache_fifo(size_t sz) : sz_(sz) {}
 
     void dump(KeyT key) { 
       std::cout << "key: " << key << " small: " << small_cache << " main: " << main_cache << " ghost: " << ghost_cache << "\n"; 
     }
 
-    template <typename F> bool lookup_update(KeyT key, F slow_get_page) {
-
-
+    template <typename F> bool fifo_update(KeyT key, F slow_get_page) {
       auto ghost_hit = ghost_hash.find(key);
       auto main_hit = main_hash.find(key);
       auto small_hit = small_hash.find(key);
@@ -90,43 +88,3 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_t {
       }
     }
 };
-
-
-
-
-// template <typename T, typename KeyT = int> struct cache_t {
-//   size_t sz_;
-//   std::list<std::pair<KeyT, T>> cache_;
-
-//   using ListIt = typename std::list<std::pair<KeyT, T>>::iterator;
-//   std::unordered_map<KeyT, ListIt> hash_;
-
-
-//   cache_t(size_t sz) : sz_(sz) {}
-
-//   bool full() const { return (cache_.size() == sz_); }
-
-//   template <typename F> bool lookup_update(KeyT key, F slow_get_page) {
-//     auto hit = hash_.find(key);
-//     if (hit == hash_.end()) {
-//       if (full()) {
-//         hash_.erase(cache_.back().first);
-//         cache_.pop_back();
-//       }
-//       cache_.emplace_front(key, slow_get_page(key));
-//       hash_.emplace(key, cache_.begin());
-//       return false;
-//     }
-
-//     auto eltit = hit->second;
-//     if (eltit != cache_.begin())
-//       cache_.splice(cache_.begin(), cache_, eltit, std::next(eltit));
-//     return true;
-//   }
-// };
-
-
-
-// how to move elements from the midle of list and unorderd map(for movement from ghost)? --- the biggest question rn
-// how te send size of cache from main to hpp?
-// how to add frecquency

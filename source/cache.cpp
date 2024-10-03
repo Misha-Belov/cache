@@ -1,29 +1,38 @@
 #include <cassert>
 #include <iostream>
+#include <deque>
 
-#include "cache.hpp"
+#include "s3_fifo.hpp"
+#include "ideal.hpp"
+
+int slow_get_page_int (int key) { return key; }
 
 int main() {
-  int hits = 0;
-  int count_of_elements;
+  int hits_fifo = 0, hits_ideal = 0;
+  size_t count_of_elements;
   size_t cache_size;
+  std::deque<int> request;
 
   std::cin >> count_of_elements >> cache_size;
   assert(std::cin.good());
 
-  cache_t<int> c{cache_size};
+  cache_fifo<int> c_fifo{cache_size};
+  cache_ideal<int> c_ideal{cache_size, count_of_elements};
 
   for (int i = 0; i < count_of_elements; ++i) {
     int q;
     std::cin >> q;
     assert(std::cin.good());
 
-    hits += c.lookup_update(q, slow_get_page_int);
+    hits_fifo += c_fifo.fifo_update(q, slow_get_page_int);
+    request.push_back(q);
 
     #ifdef DEBUG
       c.dump(q);  
     #endif
   }
 
-  std::cout << hits << std::endl;
+  hits_ideal += c_ideal.ideal_update(request, slow_get_page_int);
+
+  std::cout << hits_fifo << " " << hits_ideal << std::endl;
 }
