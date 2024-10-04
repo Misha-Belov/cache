@@ -4,6 +4,7 @@
 #include <list>
 #include <unordered_map>
 #include <vector>
+#include <cmath>
 
 
 
@@ -32,6 +33,11 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_fifo
   public:
     cache_fifo(size_t sz) : sz_(sz) {}
 
+    size_t main_size = ceil(sz_ * 0.4); 
+    size_t small_size = ceil(sz_ * 0.3); 
+    size_t ghost_size = 2 + sz_ - main_size - small_size;
+
+
     void dump(KeyT key) { 
       std::cout << "key: " << key << " small: " << small_cache << " main: " << main_cache << " ghost: " << ghost_cache << "\n"; 
     }
@@ -42,9 +48,9 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_fifo
       auto small_hit = small_hash.find(key);
 
       if (small_hit == small_hash.end() && main_hit == main_hash.end() && ghost_hit == ghost_hash.end()){      //key not found
-        if (small_cache.size() == sz_){                                                                       
+        if (small_cache.size() == small_size){                                                                       
           if (std::get<2>(small_cache.back()) > 0){                                                                            
-            if (main_cache.size() == sz_){
+            if (main_cache.size() == main_size){
               main_hash.erase(std::get<0>(main_cache.back()));
               main_cache.pop_back();
             }                    
@@ -55,7 +61,7 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_fifo
             small_cache.pop_back();
           }      
           else {
-            if (ghost_cache.size() == sz_){
+            if (ghost_cache.size() == ghost_size){
               ghost_hash.erase(std::get<0>(ghost_cache.back()));
               ghost_cache.pop_back();
             }
@@ -79,6 +85,10 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_fifo
           std::get<2>(*(main_hit->second)) += 1; 
         }
         else {
+          if (main_cache.size() == main_size){
+            main_hash.erase(std::get<0>(main_cache.back()));
+            main_cache.pop_back();
+          }
           main_cache.emplace_front(*(ghost_hit->second));   
           main_hash.emplace(std::get<0>(*(main_cache.begin())), main_cache.begin());                    
           ghost_cache.erase((ghost_hit->second));
