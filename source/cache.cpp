@@ -26,7 +26,7 @@ int main() {
     assert(std::cin.good());
 
     hits_fifo += c_fifo.fifo_update(q, slow_get_page_int);
-    request.push_front(q);
+    request.push_back(q);
 
     #ifdef DEBUG
       c_fifo.dump(q);  

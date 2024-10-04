@@ -8,13 +8,21 @@
 #include <algorithm>
 #include <iostream>
 
+template <typename T1, typename T2> 
+std::ostream &operator<< (std::ostream &os, const std::list<std::pair<T1, T2>> &cache) {
+  for (auto const &i: cache) {
+    os << i.second << " ";
+  }
+  return os;
+}
+
 template <typename T, typename KeyT = int, typename frec = int> class cache_ideal {
   private:
     size_t sz_;
 
-    std::list<std::tuple<KeyT, T, frec>> cache;
+    std::list<std::pair<KeyT, T>> cache;
 
-    using ListIt = typename std::list<std::tuple<KeyT, T, frec>>::iterator;
+    using ListIt = typename std::list<std::pair<KeyT, T>>::iterator;
     
     std::unordered_map<KeyT, ListIt> hash;
 
@@ -23,43 +31,43 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_idea
 
     template <typename Tp, typename F> int ideal_update(std::deque<Tp> request, F slow_get_page) {
       int hits = 0;
+
       for (int n : request) {
+        KeyT key = request.front();
 
-        KeyT key = request.back();
+        // std::cout << "key: " << key << " cache: " << cache << "\n";
 
-        if (hash.find(key) == hash.end()) {
+        if (hash.find(key) == hash.end()) {   //key is not in cache
           if (cache.size() == sz_) {
-            bool is_exist = 1;
             size_t appear_num = 0;
-            ListIt appear_iter;
+            ListIt appear_iter = cache.begin();
 
             for (auto& hash_elem : hash) {
-              size_t t = 0;
               auto f = std::find(request.begin(), request.end(), hash_elem.first);
-              
-              if (f == request.end() || appear_num < t) {
-                appear_num = t;
+              int dist = std::distance(request.begin(), f);
+
+              if (f == request.end() || appear_num < dist) {
+                appear_num = dist;
                 appear_iter = hash_elem.second;
               }
               if (f == request.end()) {
                 break;
               }
-
-              ++t;
             }    
 
             cache.erase(appear_iter);
-            hash.erase(std::get<0>(*(appear_iter)));                                               
+            hash.erase(appear_iter->first);  
+            request.pop_front();                                             
           }
           else {
-            request.pop_back();
+            request.pop_front();
           }
-          cache.emplace_front(key, slow_get_page(key), 0);     
+          cache.emplace_front(key, slow_get_page(key));     
           hash.emplace(key, cache.begin());
         }
         else
         {
-          request.pop_back();
+          request.pop_front();
           ++hits;
         }
       }
