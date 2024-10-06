@@ -31,10 +31,12 @@ template <typename T, typename KeyT = int, typename frec = int> class cache_idea
 
     template <typename Tp, typename F> int ideal_update(std::deque<Tp> request, F slow_get_page) {
       int hits = 0;
+      int c = 0;
 
       for (int n : request) {
         KeyT key = request.front();
-
+        // std::cout << c << " ";
+        // c++;
         // std::cout << "key: " << key << " cache: " << cache << "\n";
 
         if (hash.find(key) == hash.end()) {   //key is not in cache

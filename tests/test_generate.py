@@ -6,7 +6,9 @@ for i in range(0, count_tests) :
     file = open(file_name, 'w')
 
     size_of_cache  = random.randint(100, 200)
+    # size_of_cache = 120000
     count_of_elems = random.randint(10000, 20000)
+    # count_of_elems = 400000
     test_str = str(count_of_elems) + " " + str(size_of_cache) + "\n"
     
     for j in range(count_of_elems) :
