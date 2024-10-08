@@ -21,7 +21,7 @@ int main() {
   cache_fifo<int> c_fifo{cache_size};
   cache_ideal<int> c_ideal{cache_size};
 
-  auto start = std::chrono::high_resolution_clock::now();
+  auto start_all = std::chrono::high_resolution_clock::now();
 
   for (int i = 0; i < count_of_elements; ++i) {
     int q;
@@ -36,11 +36,17 @@ int main() {
     #endif
   }
 
-  hits_ideal = c_ideal.ideal_update(request, slow_get_page_int);
+  auto start_idl = std::chrono::high_resolution_clock::now();
 
-  auto stop = std::chrono::high_resolution_clock::now();
-  auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+  // hits_ideal = c_ideal.ideal_update(request, slow_get_page_int);
+
+  auto stop_idl = std::chrono::high_resolution_clock::now();
+  auto duration_idl = std::chrono::duration_cast<std::chrono::milliseconds>(stop_idl - start_idl);
+
+  auto stop_all = std::chrono::high_resolution_clock::now();
+  auto duration_all = std::chrono::duration_cast<std::chrono::milliseconds>(stop_all - start_all);
 
   std::cout << "fifo: " << hits_fifo << " ideal: " << hits_ideal << "\n";
-  std::cout << "Time taken by function: " << duration.count() << " miliseconds" << std::endl;
+  std::cout << "Time taken by function: " << duration_all.count() << " miliseconds; \n" 
+                          << "By ideal: " << duration_idl.count() << " miliseconds " << std::endl;
 }

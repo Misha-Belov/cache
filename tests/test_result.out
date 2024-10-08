@@ -1,20 +1,60 @@
-fifo: 1789 ideal: 5846
-Time taken by function: 2 miliseconds
-fifo: 1207 ideal: 4800
-Time taken by function: 1 miliseconds
-fifo: 2094 ideal: 5680
-Time taken by function: 2 miliseconds
-fifo: 1811 ideal: 6040
-Time taken by function: 2 miliseconds
-fifo: 2760 ideal: 8396
-Time taken by function: 3 miliseconds
-fifo: 3186 ideal: 9018
-Time taken by function: 3 miliseconds
-fifo: 2715 ideal: 9098
-Time taken by function: 3 miliseconds
-fifo: 3113 ideal: 9277
-Time taken by function: 3 miliseconds
-fifo: 2554 ideal: 7361
-Time taken by function: 2 miliseconds
-fifo: 1852 ideal: 6307
-Time taken by function: 2 miliseconds
+TEST 1: 
+fifo: 2792 ideal: 9145
+Time taken by function: 226 miliseconds; 
+By ideal: 206 miliseconds 
+ 
+ 
+TEST 2: 
+fifo: 2046 ideal: 6881
+Time taken by function: 159 miliseconds; 
+By ideal: 145 miliseconds 
+ 
+ 
+TEST 3: 
+fifo: 2361 ideal: 8434
+Time taken by function: 215 miliseconds; 
+By ideal: 197 miliseconds 
+ 
+ 
+TEST 4: 
+fifo: 1418 ideal: 4744
+Time taken by function: 117 miliseconds; 
+By ideal: 107 miliseconds 
+ 
+ 
+TEST 5: 
+fifo: 2436 ideal: 6957
+Time taken by function: 166 miliseconds; 
+By ideal: 152 miliseconds 
+ 
+ 
+TEST 6: 
+fifo: 2426 ideal: 8170
+Time taken by function: 209 miliseconds; 
+By ideal: 191 miliseconds 
+ 
+ 
+TEST 7: 
+fifo: 2318 ideal: 7153
+Time taken by function: 179 miliseconds; 
+By ideal: 164 miliseconds 
+ 
+ 
+TEST 8: 
+fifo: 1890 ideal: 7252
+Time taken by function: 185 miliseconds; 
+By ideal: 166 miliseconds 
+ 
+ 
+TEST 9: 
+fifo: 3446 ideal: 9894
+Time taken by function: 228 miliseconds; 
+By ideal: 211 miliseconds 
+ 
+ 
+TEST 10: 
+fifo: 1404 ideal: 5711
+Time taken by function: 141 miliseconds; 
+By ideal: 128 miliseconds 
+ 
+ 
