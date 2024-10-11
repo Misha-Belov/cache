@@ -9,7 +9,7 @@ for i in range(0, count_tests) :
     # size_of_cache = 2
     count_of_elems = random.randint(10000, 20000)
     # count_of_elems = 40
-    test_str = str(count_of_elems) + " " + str(size_of_cache) + "\n"
+    test_str = str(size_of_cache) + " " + str(count_of_elems)  + "\n"
     
     for j in range(count_of_elems) :
       test_str += str(random.randint(1, 1000)) + " "

@@ -9,16 +9,17 @@
 int slow_get_page_int (int key) { return key; }
 
 int main() {
-  size_t hits_fifo = 0;
-  size_t hits_ideal = 0;
-  size_t count_of_elements;
-  size_t cache_size;
+  size_t hits_fifo         = 0;
+  size_t hits_ideal        = 0;
+  size_t count_of_elements = 0;
+  size_t cache_size        = 0;
+
   std::deque<int> request;
 
-  std::cin >> count_of_elements >> cache_size;
+  std::cin >> cache_size >> count_of_elements;
   assert(std::cin.good());
 
-  cache_fifo<int> c_fifo{cache_size};
+  cache_fifo <int> c_fifo {cache_size};
   cache_ideal<int> c_ideal{cache_size};
 
   auto start_all = std::chrono::high_resolution_clock::now();
@@ -38,7 +39,7 @@ int main() {
 
   auto start_idl = std::chrono::high_resolution_clock::now();
 
-  // hits_ideal = c_ideal.ideal_update(request, slow_get_page_int);
+  hits_ideal = c_ideal.ideal_update(request, slow_get_page_int);
 
   auto stop_idl = std::chrono::high_resolution_clock::now();
   auto duration_idl = std::chrono::duration_cast<std::chrono::milliseconds>(stop_idl - start_idl);

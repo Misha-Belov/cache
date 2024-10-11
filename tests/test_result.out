@@ -1,60 +1,60 @@
 TEST 1: 
-fifo: 2792 ideal: 9145
-Time taken by function: 226 miliseconds; 
-By ideal: 206 miliseconds 
+fifo: 1800 ideal: 6142
+Time taken by function: 220 miliseconds; 
+By ideal: 200 miliseconds 
  
  
 TEST 2: 
-fifo: 2046 ideal: 6881
-Time taken by function: 159 miliseconds; 
-By ideal: 145 miliseconds 
+fifo: 1502 ideal: 5497
+Time taken by function: 197 miliseconds; 
+By ideal: 180 miliseconds 
  
  
 TEST 3: 
-fifo: 2361 ideal: 8434
-Time taken by function: 215 miliseconds; 
-By ideal: 197 miliseconds 
+fifo: 2593 ideal: 7413
+Time taken by function: 254 miliseconds; 
+By ideal: 235 miliseconds 
  
  
 TEST 4: 
-fifo: 1418 ideal: 4744
-Time taken by function: 117 miliseconds; 
-By ideal: 107 miliseconds 
+fifo: 1878 ideal: 5717
+Time taken by function: 209 miliseconds; 
+By ideal: 194 miliseconds 
  
  
 TEST 5: 
-fifo: 2436 ideal: 6957
-Time taken by function: 166 miliseconds; 
-By ideal: 152 miliseconds 
+fifo: 2481 ideal: 6909
+Time taken by function: 257 miliseconds; 
+By ideal: 240 miliseconds 
  
  
 TEST 6: 
-fifo: 2426 ideal: 8170
-Time taken by function: 209 miliseconds; 
-By ideal: 191 miliseconds 
+fifo: 2939 ideal: 9526
+Time taken by function: 352 miliseconds; 
+By ideal: 317 miliseconds 
  
  
 TEST 7: 
-fifo: 2318 ideal: 7153
-Time taken by function: 179 miliseconds; 
-By ideal: 164 miliseconds 
+fifo: 1407 ideal: 5168
+Time taken by function: 187 miliseconds; 
+By ideal: 170 miliseconds 
  
  
 TEST 8: 
-fifo: 1890 ideal: 7252
-Time taken by function: 185 miliseconds; 
-By ideal: 166 miliseconds 
+fifo: 1860 ideal: 7104
+Time taken by function: 261 miliseconds; 
+By ideal: 238 miliseconds 
  
  
 TEST 9: 
-fifo: 3446 ideal: 9894
-Time taken by function: 228 miliseconds; 
-By ideal: 211 miliseconds 
+fifo: 1787 ideal: 5618
+Time taken by function: 193 miliseconds; 
+By ideal: 177 miliseconds 
  
  
 TEST 10: 
-fifo: 1404 ideal: 5711
-Time taken by function: 141 miliseconds; 
-By ideal: 128 miliseconds 
+fifo: 1930 ideal: 5830
+Time taken by function: 201 miliseconds; 
+By ideal: 185 miliseconds 
  
  
