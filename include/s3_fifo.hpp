@@ -8,13 +8,13 @@
 
 
 
-// template <typename T1, typename T2, typename T3> 
-// std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<T1, T2, T3>> &cache) {
-//   for (auto const &i: cache) {
-//     os << std::get<1>(i) << " ";
-//   }
-//   return os;
-// }
+template <typename T1, typename T2, typename T3> 
+std::ostream &operator<< (std::ostream &os, const std::list<std::tuple<T1, T2, T3>> &cache) {
+  for (auto const &i: cache) {
+    os << std::get<1>(i) << " ";
+  }
+  return os;
+}
 
 template <typename T, typename KeyT = int, typename frec = int> class cache_fifo {
   private:

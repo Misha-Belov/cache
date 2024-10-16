@@ -1,60 +1,80 @@
 TEST 1: 
-fifo: 1800 ideal: 6142
-Time taken by function: 220 miliseconds; 
-By ideal: 200 miliseconds 
+fifo hits: 2107
+Time taken by function: 15 miliseconds; 
+ideal hits: 7135
+Time taken by function: 35 miliseconds; 
+
  
  
 TEST 2: 
-fifo: 1502 ideal: 5497
-Time taken by function: 197 miliseconds; 
-By ideal: 180 miliseconds 
+fifo hits: 2007
+Time taken by function: 9 miliseconds; 
+ideal hits: 6436
+Time taken by function: 29 miliseconds; 
+
  
  
 TEST 3: 
-fifo: 2593 ideal: 7413
-Time taken by function: 254 miliseconds; 
-By ideal: 235 miliseconds 
+fifo hits: 1485
+Time taken by function: 7 miliseconds; 
+ideal hits: 4981
+Time taken by function: 21 miliseconds; 
+
  
  
 TEST 4: 
-fifo: 1878 ideal: 5717
-Time taken by function: 209 miliseconds; 
-By ideal: 194 miliseconds 
+fifo hits: 1580
+Time taken by function: 9 miliseconds; 
+ideal hits: 5612
+Time taken by function: 26 miliseconds; 
+
  
  
 TEST 5: 
-fifo: 2481 ideal: 6909
-Time taken by function: 257 miliseconds; 
-By ideal: 240 miliseconds 
+fifo hits: 3116
+Time taken by function: 12 miliseconds; 
+ideal hits: 8884
+Time taken by function: 38 miliseconds; 
+
  
  
 TEST 6: 
-fifo: 2939 ideal: 9526
-Time taken by function: 352 miliseconds; 
-By ideal: 317 miliseconds 
+fifo hits: 1621
+Time taken by function: 9 miliseconds; 
+ideal hits: 5993
+Time taken by function: 26 miliseconds; 
+
  
  
 TEST 7: 
-fifo: 1407 ideal: 5168
-Time taken by function: 187 miliseconds; 
-By ideal: 170 miliseconds 
+fifo hits: 1953
+Time taken by function: 6 miliseconds; 
+ideal hits: 5568
+Time taken by function: 25 miliseconds; 
+
  
  
 TEST 8: 
-fifo: 1860 ideal: 7104
-Time taken by function: 261 miliseconds; 
-By ideal: 238 miliseconds 
+fifo hits: 1719
+Time taken by function: 10 miliseconds; 
+ideal hits: 6706
+Time taken by function: 22 miliseconds; 
+
  
  
 TEST 9: 
-fifo: 1787 ideal: 5618
-Time taken by function: 193 miliseconds; 
-By ideal: 177 miliseconds 
+fifo hits: 2336
+Time taken by function: 7 miliseconds; 
+ideal hits: 6938
+Time taken by function: 28 miliseconds; 
+
  
  
 TEST 10: 
-fifo: 1930 ideal: 5830
-Time taken by function: 201 miliseconds; 
-By ideal: 185 miliseconds 
+fifo hits: 1249
+Time taken by function: 6 miliseconds; 
+ideal hits: 4434
+Time taken by function: 19 miliseconds; 
+
  
  
